@@ -1,49 +1,73 @@
-// synchronous programming : code is executed line  by line
-// function hello(){
-//     console.log("hello,world");
+// ================================
+// Synchronous Programming
+// ================================
+// Code is executed line by line.
 
+// function hello() {
+//     console.log("Hello, World");
 // }
+
 // hello();
 // console.log("This is synchronous programming");
 
-// Asynchornous programming : the code is executed line by line, but some 
-// setTimeout(): function that is used to execute the function 
 
-// const hello =()=> {
+// ================================
+// Asynchronous Programming
+// ================================
+// Code is executed line by line, but some tasks
+// (like setTimeout) are executed later.
+
+// const hello = () => {
 //     setTimeout(() => {
-//         console.log("Hello,world");
+//         console.log("Hello, World");
 //     }, 2000);
-// }
+// };
+
 // hello();
 // console.log("This is asynchronous programming");
 
-// callback, promises, async/await
 
-// function add(n1,n2,callback){
-//     console.log (n1+n2);   
+// ================================
+// Callback Function Example 1
+// ================================
+
+// function add(n1, n2, callback) {
+//     console.log("Sum =", n1 + n2);
 //     callback();
 // }
 
-// let a =10;
+// function sayHi() {
+//     console.log("This is a callback function.");
+// }
+
+// function hello() {
+//     console.log("Hello, Harshit!");
+// }
+
+// let a = 10;
 // let b = 20;
 
-// add(a,b,sayHI);
-// add(a,b,hello);
-// add(hello,sayHI);
+// add(a, b, sayHi);
+// add(a, b, hello);
 
-// function sayHI(){
-//     console.log("This is callback funtion");
-// }
-// function hello(){
-//     console.log("Hello,Harshit");
-// }
 
-// create a function that display(callback) that print "Welcome to ABES,then call callback which print learning "FSD Workshop"
-// function welcome(callback){
-//     console.log("Welcome to ABES");
-//     callback();
-// }
- 
-// function callback(){
-//     console.log("FSD");
-// }
+// ================================
+// Callback Function Example 2
+// Question:
+// Create a function display(callback)
+// that prints "Welcome to ABES"
+// then calls the callback function
+// which prints "Learning FSD Workshop".
+// ================================
+
+function display(callback) {
+    console.log("Welcome to ABES");
+    callback();
+}
+
+function learning() {
+    console.log("Learning FSD Workshop");
+}
+
+// Function Call
+display(learning);
