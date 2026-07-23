@@ -6,5 +6,5 @@ git commands
 3. git commit -m " msg"
 4. git push
 5. git status 
-6. git config --global user.name "Gopal Maheshwari"
-7. git config --global user.email "gopalbirla181@gmail.com"
+6. git config --global user.name "Harshit Sharma"
+7. git config --global user.email "harshitsharma3264@gmail.com"
