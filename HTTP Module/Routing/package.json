@@ -1,0 +1,12 @@
+{
+  "name": "routing",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "routing.js",
+  "scripts": {
+    "start": "node routing.js"
+  }
+}
