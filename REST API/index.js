@@ -28,3 +28,10 @@ app.post('/users', (req, res) => {
 app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');
 });
+
+
+//DELETE 
+app.delete("/users/:id",(req,res)=>{
+    users=users.filter(u=>u.id!=req.params.id);
+    res.send("user deleted successfully");
+});
