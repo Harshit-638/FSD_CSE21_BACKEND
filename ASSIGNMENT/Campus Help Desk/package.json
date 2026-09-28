@@ -1,0 +1,12 @@
+{
+  "name": "campus-help-desk",
+  "version": "1.0.0",
+  "description": "ABES Engineering College Campus Help Desk & Student Support Portal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

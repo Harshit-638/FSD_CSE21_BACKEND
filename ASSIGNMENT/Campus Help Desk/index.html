@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Help Desk | ABES Engineering College</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/webp" href="assets/abes-logo.webp">
+</head>
+<body>
+  <!-- Fixed Layered Background for HD Campus Visibility -->
+  <div class="bg-backdrop" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <!-- Notification Toast Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Delete Confirmation Modal -->
+  <div id="confirmModal" class="modal-backdrop" hidden>
+    <div class="modal-card">
+      <div class="modal-icon-wrap">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="3 6 5 6 21 6"></polyline>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          <line x1="10" y1="11" x2="10" y2="17"></line>
+          <line x1="14" y1="11" x2="14" y2="17"></line>
+        </svg>
+      </div>
+      <h3 class="modal-title">Delete Request</h3>
+      <p class="modal-text" id="confirmModalText">Are you sure you want to delete this campus support request? This action cannot be undone.</p>
+      <div class="modal-actions">
+        <button type="button" id="confirmCancelBtn" class="btn btn-secondary">Cancel</button>
+        <button type="button" id="confirmDeleteBtn" class="btn btn-danger">Yes, Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <!-- 1. Header Section -->
+    <header class="app-header">
+      <div class="header-container">
+        <div class="header-brand">
+          <img src="assets/abes-logo.webp" alt="ABES Engineering College Logo" class="brand-logo">
+          <div class="brand-text">
+            <span class="college-title">ABES ENGINEERING COLLEGE</span>
+            <span class="portal-subtitle">Campus Help Desk | Student Support Portal</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="online-indicator">
+            <span class="pulse-dot"></span>
+            <span class="indicator-text">Student Support Online</span>
+          </div>
+
+          <div class="header-counter-badge" title="Total active campus requests">
+            <span class="counter-label">Total Requests:</span>
+            <span id="headerTotalCount" class="counter-val">0</span>
+          </div>
+
+          <button id="themeToggleBtn" class="btn-theme-toggle" aria-label="Toggle dark/light theme" title="Toggle Theme">
+            <span id="themeIcon" class="theme-icon">
+              <!-- Default dark mode shows sun icon to switch to light -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+            <span id="themeLabel" class="theme-text">Light</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- 2. Hero / Welcome Section -->
+      <section class="hero-section">
+        <div class="hero-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span>LET'S SOLVE IT TOGETHER</span>
+        </div>
+        <h1 class="hero-title">Welcome to Campus Help Desk</h1>
+        <p class="hero-subtitle">Submit your campus-related issues or requests. We're here to help you.</p>
+      </section>
+
+      <!-- 3. Statistics Cards (Calculated from requests.json) -->
+      <section class="statistics-section" aria-label="Campus Statistics">
+        <div class="stats-grid">
+          <!-- Total Requests -->
+          <div class="stat-card stat-total">
+            <div class="stat-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Total Requests</span>
+              <span id="statTotal" class="stat-value">0</span>
+            </div>
+          </div>
+
+          <!-- High Priority -->
+          <div class="stat-card stat-high">
+            <div class="stat-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">High Priority</span>
+              <span id="statHigh" class="stat-value">0</span>
+            </div>
+          </div>
+
+          <!-- Medium Priority -->
+          <div class="stat-card stat-medium">
+            <div class="stat-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Medium Priority</span>
+              <span id="statMedium" class="stat-value">0</span>
+            </div>
+          </div>
+
+          <!-- Low Priority -->
+          <div class="stat-card stat-low">
+            <div class="stat-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Low Priority</span>
+              <span id="statLow" class="stat-value">0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Submit New Request Glass Panel -->
+      <section class="form-section" id="formSection" aria-label="Request Form Panel">
+        <div class="glass-panel">
+          <div class="panel-header">
+            <div class="panel-title-wrap">
+              <div class="panel-icon-circle">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                </svg>
+              </div>
+              <div>
+                <h2 id="formHeading" class="panel-title">SUBMIT NEW REQUEST</h2>
+                <p id="formDescription" class="panel-subtitle">Provide details below to raise a campus grievance or service request.</p>
+              </div>
+            </div>
+            <div id="editingBadge" class="editing-indicator" hidden>
+              <span>Currently Editing: <strong id="editingIdText">#CHD-000</strong></span>
+            </div>
+          </div>
+
+          <form id="requestForm" class="request-form" novalidate>
+            <input type="hidden" id="requestId" value="">
+
+            <div class="form-row">
+              <!-- Student Name -->
+              <div class="form-group">
+                <label for="studentName" class="form-label">
+                  Student Name <span class="required">*</span>
+                </label>
+                <div class="input-wrap">
+                  <input type="text" id="studentName" class="form-control" placeholder="e.g. Aman Sharma" required>
+                </div>
+                <span class="field-error" id="nameError"></span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email" class="form-label">
+                  Email <span class="required">*</span>
+                </label>
+                <div class="input-wrap">
+                  <input type="email" id="email" class="form-control" placeholder="e.g. student@abes.ac.in" required>
+                </div>
+                <span class="field-error" id="emailError"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <!-- Category -->
+              <div class="form-group">
+                <label for="category" class="form-label">
+                  Category <span class="required">*</span>
+                </label>
+                <div class="select-wrap">
+                  <select id="category" class="form-control form-select" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Infrastructure">Infrastructure</option>
+                    <option value="IT Support">IT Support</option>
+                    <option value="Library">Library</option>
+                    <option value="Hostel">Hostel</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <span class="field-error" id="categoryError"></span>
+              </div>
+
+              <!-- Priority -->
+              <div class="form-group">
+                <label for="priority" class="form-label">
+                  Priority <span class="required">*</span>
+                </label>
+                <div class="select-wrap">
+                  <select id="priority" class="form-control form-select" required>
+                    <option value="" disabled selected>Select priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                  </select>
+                </div>
+                <span class="field-hint">Urgency level (High for exam/lab blocking issues)</span>
+                <span class="field-error" id="priorityError"></span>
+              </div>
+            </div>
+
+            <!-- Problem Description -->
+            <div class="form-group full-width">
+              <label for="problemDescription" class="form-label">
+                Problem Description <span class="required">*</span>
+              </label>
+              <textarea id="problemDescription" class="form-control form-textarea" rows="4" placeholder="Describe your issue in detail..." required></textarea>
+              <span class="field-error" id="descriptionError"></span>
+            </div>
+
+            <!-- Form Action Buttons -->
+            <div class="form-actions">
+              <button type="submit" id="submitBtn" class="btn btn-primary">
+                <span class="btn-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </span>
+                <span id="submitBtnText">Submit Request</span>
+              </button>
+
+              <button type="button" id="cancelEditBtn" class="btn btn-secondary" hidden>
+                Cancel Edit
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- 5. Recent Requests Section -->
+      <section class="requests-section" aria-label="Submitted Requests List">
+        <div class="glass-panel">
+          <div class="panel-header requests-header-bar">
+            <div>
+              <h2 class="panel-title">RECENT REQUESTS</h2>
+              <p class="panel-subtitle">View and manage all submitted requests.</p>
+            </div>
+
+            <!-- Search and Filter Bar -->
+            <div class="filters-bar">
+              <div class="search-input-wrap">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search by name, ID or description...">
+              </div>
+
+              <select id="filterCategory" class="filter-select" aria-label="Filter by Category">
+                <option value="ALL">All Categories</option>
+                <option value="Academic">Academic</option>
+                <option value="Infrastructure">Infrastructure</option>
+                <option value="IT Support">IT Support</option>
+                <option value="Library">Library</option>
+                <option value="Hostel">Hostel</option>
+                <option value="Transport">Transport</option>
+                <option value="Other">Other</option>
+              </select>
+
+              <select id="filterPriority" class="filter-select" aria-label="Filter by Priority">
+                <option value="ALL">All Priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Loading Indicator -->
+          <div id="loadingSpinner" class="loading-state" hidden>
+            <div class="spinner"></div>
+            <p>Loading campus requests...</p>
+          </div>
+
+          <!-- Empty State -->
+          <div id="emptyState" class="empty-state" hidden>
+            <div class="empty-icon-wrap">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h3 class="empty-title">No Campus Requests Found</h3>
+            <p class="empty-subtitle">There are currently no tickets matching your criteria. Submit a new request using the form above.</p>
+          </div>
+
+          <!-- Requests Cards Grid -->
+          <div id="requestsList" class="requests-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Branding -->
+    <footer class="app-footer">
+      <div class="footer-container">
+        <p>© 2026 ABES Engineering College, Ghaziabad. Campus Help Desk &amp; Student Support Portal.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
