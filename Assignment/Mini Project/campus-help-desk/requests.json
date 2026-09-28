@@ -1,0 +1,29 @@
+[
+  {
+    "id": "101",
+    "studentName": "Aarav Sharma",
+    "email": "aarav.sharma@college.edu",
+    "category": "IT & Campus Wi-Fi",
+    "priority": "Urgent",
+    "description": "Unable to connect to Central Lab Wi-Fi router on 2nd floor block B. Shows IP configuration error.",
+    "date": "28 Sep 2026, 08:30 AM"
+  },
+  {
+    "id": "102",
+    "studentName": "Pooja Verma",
+    "email": "pooja.v@college.edu",
+    "category": "Hostel & Mess",
+    "priority": "Normal",
+    "description": "Room 204 reading lamp socket not working since yesterday evening.",
+    "date": "28 Sep 2026, 09:15 AM"
+  },
+  {
+    "id": "103",
+    "studentName": "satwik",
+    "email": "harshitsharma3264@gmail.com",
+    "category": "IT & Campus Wi-Fi",
+    "priority": "Urgent",
+    "description": "not well",
+    "date": "Sep 28, 2026, 09:15 AM"
+  }
+]

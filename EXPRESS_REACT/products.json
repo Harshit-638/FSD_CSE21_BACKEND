@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Product 1",
+    "description": "This is the description for Product 1.",
+    "price": 19.99,
+    "category": "General"
+  },
+  {
+    "id": 2,
+    "name": "Headphone",
+    "price": 15000,
+    "category": "Audio",
+    "description": "Better Headphone"
+  }
+]

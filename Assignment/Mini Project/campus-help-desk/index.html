@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABES Engineering College | Campus Help Desk</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Full-Page HD ABES Campus Background with Controlled Glass Overlay -->
+  <div class="campus-backdrop"></div>
+
+  <!-- Header Navigation -->
+  <header class="top-nav">
+    <div class="nav-container">
+      
+      <!-- ABES Identity & Logo -->
+      <div class="brand">
+        <div class="logo-wrapper">
+          <img 
+            src="https://www.abes.ac.in/assets/Logo.webp" 
+            alt="ABES Engineering College" 
+            class="abes-logo"
+            onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';"
+          >
+          <div id="logoFallback" class="logo-fallback hidden">ABES</div>
+        </div>
+
+        <div class="brand-text">
+          <span class="college-title">ABES ENGINEERING COLLEGE</span>
+          <span class="portal-subtitle">Campus Help Desk | Student Support Portal</span>
+        </div>
+      </div>
+
+      <!-- Controls & Status Indicators -->
+      <div class="nav-controls">
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span class="status-text">Student Support Online</span>
+        </div>
+
+        <div class="ticket-counter-pill" id="headerCounter">
+          <span class="counter-label">Total Requests:</span>
+          <span class="counter-val" id="headerCount">0</span>
+        </div>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button type="button" id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="icon-moon hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Dashboard Container -->
+  <main class="dashboard-container">
+
+    <!-- Hero Introduction Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="hero-eyebrow">LET'S SOLVE IT TOGETHER</span>
+        <h1 class="hero-title">Welcome to Campus Help Desk</h1>
+        <p class="hero-subtitle">Submit your campus-related issues or requests. We're here to help you.</p>
+      </div>
+    </section>
+
+    <!-- 4 Modern Glass KPI Cards -->
+    <section class="kpi-section">
+      <div class="kpi-grid">
+        
+        <!-- Total Requests -->
+        <div class="stat-card stat-total-card">
+          <div class="stat-icon icon-blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-title">Total Requests</span>
+            <span class="stat-value" id="statTotal">0</span>
+          </div>
+        </div>
+
+        <!-- High Priority -->
+        <div class="stat-card stat-high-card">
+          <div class="stat-icon icon-rose">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-title">High Priority</span>
+            <span class="stat-value stat-high-val" id="statHigh">0</span>
+          </div>
+        </div>
+
+        <!-- Medium Priority -->
+        <div class="stat-card stat-med-card">
+          <div class="stat-icon icon-amber">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-title">Medium Priority</span>
+            <span class="stat-value stat-med-val" id="statMed">0</span>
+          </div>
+        </div>
+
+        <!-- Low Priority -->
+        <div class="stat-card stat-low-card">
+          <div class="stat-icon icon-emerald">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-title">Low Priority</span>
+            <span class="stat-value stat-low-val" id="statLow">0</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Submit New Request Panel -->
+    <section class="card-panel form-panel" id="formPanel">
+      <div class="panel-header">
+        <div class="header-left">
+          <div class="panel-header-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+          </div>
+          <div>
+            <h2 id="formHeading">Submit New Request</h2>
+            <p class="panel-sub" id="formSub">Fill out the details below to log a campus assistance ticket.</p>
+          </div>
+        </div>
+        <div id="formStatusBadge" class="mode-badge mode-new">
+          <span class="pulse-dot"></span>
+          <span>New Ticket</span>
+        </div>
+      </div>
+
+      <form id="requestForm" autocomplete="off">
+        <input type="hidden" id="editId" value="">
+
+        <div class="form-grid">
+          
+          <!-- Student Full Name -->
+          <div class="form-field">
+            <label for="studentName" class="field-label">Student Name *</label>
+            <input 
+              type="text" 
+              id="studentName" 
+              class="form-control" 
+              placeholder="e.g. Harshit Sharma" 
+              required
+            >
+          </div>
+
+          <!-- Campus Email -->
+          <div class="form-field">
+            <label for="email" class="field-label">Email *</label>
+            <input 
+              type="email" 
+              id="email" 
+              class="form-control" 
+              placeholder="e.g. rollno@abes.ac.in" 
+              required
+            >
+          </div>
+
+          <!-- Support Category -->
+          <div class="form-field">
+            <label for="category" class="field-label">Category *</label>
+            <select id="category" class="form-control form-select" required>
+              <option value="" disabled selected>Select Category</option>
+              <option value="IT & Campus Wi-Fi">IT & Campus Wi-Fi</option>
+              <option value="Lab & Equipment">Lab & Equipment</option>
+              <option value="Hostel & Mess">Hostel & Mess</option>
+              <option value="Library & Books">Library & Books</option>
+              <option value="Academic & Exams">Academic & Exams</option>
+              <option value="General Admin">General Administration</option>
+            </select>
+          </div>
+
+          <!-- Priority Level -->
+          <div class="form-field">
+            <label for="priority" class="field-label">Priority *</label>
+            <select id="priority" class="form-control form-select" required>
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Problem Description -->
+        <div class="form-field full-width">
+          <label for="description" class="field-label">Problem Description *</label>
+          <textarea 
+            id="description" 
+            class="form-control form-textarea" 
+            rows="3" 
+            placeholder="Describe the issue, specify room or lab number, device ID, or error message..." 
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submitBtn" class="btn btn-primary">
+            <span class="btn-spinner hidden" id="btnSpinner"></span>
+            <span id="btnText">Submit Request</span>
+          </button>
+          <button type="button" id="cancelBtn" class="btn btn-secondary hidden">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Recent Requests Section -->
+    <section class="card-panel list-panel">
+      <div class="list-controls-bar">
+        <div class="list-title-wrap">
+          <div class="section-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h2>Recent Requests</h2>
+            <p class="section-sub">Track, filter, update, and resolve logged student queries.</p>
+          </div>
+        </div>
+
+        <!-- Real-Time Filter & Search Toolbar -->
+        <div class="filter-tools">
+          <div class="search-box">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="searchInput" placeholder="Search by student, email, query...">
+          </div>
+
+          <select id="filterCategory" class="filter-select">
+            <option value="ALL">All Categories</option>
+            <option value="IT & Campus Wi-Fi">IT & Wi-Fi</option>
+            <option value="Lab & Equipment">Lab & Equipment</option>
+            <option value="Hostel & Mess">Hostel & Mess</option>
+            <option value="Library & Books">Library & Books</option>
+            <option value="Academic & Exams">Academic & Exams</option>
+            <option value="General Admin">General Admin</option>
+          </select>
+
+          <select id="filterPriority" class="filter-select">
+            <option value="ALL">All Priorities</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+
+          <span class="records-badge" id="listBadge">0 tickets</span>
+        </div>
+      </div>
+
+      <!-- Requests Cards Container -->
+      <div id="requestsList" class="requests-grid">
+        <!-- Rendered via script.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Clean Footer -->
+  <footer class="page-footer">
+    <div class="footer-content">
+      <p><strong>ABES ENGINEERING COLLEGE</strong> &bull; Campus Help Desk &bull; Student Support Portal</p>
+      <p class="footer-tech">Full Stack Architecture: Node.js &bull; Express REST API &bull; JSON Storage &bull; Vanilla JavaScript</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Custom Confirmation Modal for Resolving/Deleting -->
+  <div id="confirmModal" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-icon-danger">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+      </div>
+      <div class="modal-body">
+        <h3>Resolve & Close Request?</h3>
+        <p id="modalDescription">Are you sure you want to mark this request as resolved and permanently remove it?</p>
+      </div>
+      <div class="modal-actions">
+        <button type="button" id="modalCancelBtn" class="btn btn-secondary">Keep Request</button>
+        <button type="button" id="modalConfirmBtn" class="btn btn-danger">Confirm & Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "campus-help-desk",
+  "version": "1.0.0",
+  "description": "Campus Help Desk - College Mini Project for FSD Assignment 4",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "campus",
+    "help-desk",
+    "crud",
+    "express"
+  ],
+  "author": "Student",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
