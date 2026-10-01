@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "ABES Engineering College Campus Help Desk & Student Support Portal",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node server.js"
   },
