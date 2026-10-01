@@ -75,6 +75,7 @@ const server = http.createServer((request, response) => {
                 <span class="eyebrow">STUDENT SERVICES</span>
                 <h1>Student registration</h1>
                 <p>Maintain accurate academic records with ease.</p>
+                <p>Secure and simple student record management.</p>
               </div>
             </section>
 
