@@ -1,0 +1,502 @@
+[
+  {
+    "id": "1",
+    "name": "Dell Inspiron 15 Laptop",
+    "price": 52990
+  },
+  {
+    "id": "2",
+    "name": "Samsung Galaxy S23 FE",
+    "price": 29999
+  },
+  {
+    "id": "3",
+    "name": "Apple iPad 10th Gen",
+    "price": 33900
+  },
+  {
+    "id": "4",
+    "name": "Sony WH-1000XM5 Headphones",
+    "price": 29990
+  },
+  {
+    "id": "5",
+    "name": "HP Pavilion 14 Laptop",
+    "price": 58990
+  },
+  {
+    "id": "6",
+    "name": "OnePlus 12R",
+    "price": 39999
+  },
+  {
+    "id": "7",
+    "name": "Redmi Note 13 Pro",
+    "price": 23999
+  },
+  {
+    "id": "8",
+    "name": "Realme Narzo 70 Pro",
+    "price": 19999
+  },
+  {
+    "id": "9",
+    "name": "iPhone 15",
+    "price": 69900
+  },
+  {
+    "id": "10",
+    "name": "Google Pixel 8a",
+    "price": 52999
+  },
+  {
+    "id": "11",
+    "name": "Lenovo IdeaPad Slim 3",
+    "price": 42990
+  },
+  {
+    "id": "12",
+    "name": "ASUS Vivobook 15",
+    "price": 44990
+  },
+  {
+    "id": "13",
+    "name": "Acer Aspire 5",
+    "price": 47990
+  },
+  {
+    "id": "14",
+    "name": "MacBook Air M2",
+    "price": 94900
+  },
+  {
+    "id": "15",
+    "name": "MSI Modern 14",
+    "price": 45990
+  },
+  {
+    "id": "16",
+    "name": "Samsung Galaxy Tab S9 FE",
+    "price": 34999
+  },
+  {
+    "id": "17",
+    "name": "Lenovo Tab M10",
+    "price": 14999
+  },
+  {
+    "id": "18",
+    "name": "Xiaomi Pad 6",
+    "price": 25999
+  },
+  {
+    "id": "19",
+    "name": "boAt Rockerz 450",
+    "price": 1499
+  },
+  {
+    "id": "20",
+    "name": "JBL Tune 760NC",
+    "price": 5999
+  },
+  {
+    "id": "21",
+    "name": "Apple AirPods Pro 2",
+    "price": 24900
+  },
+  {
+    "id": "22",
+    "name": "OnePlus Buds Z2",
+    "price": 2999
+  },
+  {
+    "id": "23",
+    "name": "Realme Buds Air 5",
+    "price": 3299
+  },
+  {
+    "id": "24",
+    "name": "Noise Buds VS104",
+    "price": 1299
+  },
+  {
+    "id": "25",
+    "name": "Sennheiser HD 450BT",
+    "price": 9990
+  },
+  {
+    "id": "26",
+    "name": "Samsung Galaxy Watch 6",
+    "price": 24999
+  },
+  {
+    "id": "27",
+    "name": "Apple Watch SE",
+    "price": 29900
+  },
+  {
+    "id": "28",
+    "name": "Noise ColorFit Pro 5",
+    "price": 3999
+  },
+  {
+    "id": "29",
+    "name": "boAt Wave Call 2",
+    "price": 1799
+  },
+  {
+    "id": "30",
+    "name": "Fire-Boltt Ninja Call Pro",
+    "price": 1499
+  },
+  {
+    "id": "31",
+    "name": "Logitech MX Master 3S Mouse",
+    "price": 9995
+  },
+  {
+    "id": "32",
+    "name": "Logitech M221 Silent Mouse",
+    "price": 699
+  },
+  {
+    "id": "33",
+    "name": "HP Wireless Mouse X200",
+    "price": 549
+  },
+  {
+    "id": "34",
+    "name": "Logitech K380 Keyboard",
+    "price": 3295
+  },
+  {
+    "id": "35",
+    "name": "Redragon Kumara K552 Keyboard",
+    "price": 2499
+  },
+  {
+    "id": "36",
+    "name": "Zebronics Zeb-Transformer Keyboard Combo",
+    "price": 999
+  },
+  {
+    "id": "37",
+    "name": "Dell 24 Monitor S2425H",
+    "price": 10499
+  },
+  {
+    "id": "38",
+    "name": "LG 27 inch UltraGear Monitor",
+    "price": 15999
+  },
+  {
+    "id": "39",
+    "name": "Samsung 27 inch Odyssey G3",
+    "price": 17999
+  },
+  {
+    "id": "40",
+    "name": "Acer Nitro 24 Monitor",
+    "price": 9999
+  },
+  {
+    "id": "41",
+    "name": "Western Digital 1TB Portable HDD",
+    "price": 4499
+  },
+  {
+    "id": "42",
+    "name": "Seagate 2TB Expansion HDD",
+    "price": 6299
+  },
+  {
+    "id": "43",
+    "name": "Samsung T7 1TB SSD",
+    "price": 8999
+  },
+  {
+    "id": "44",
+    "name": "SanDisk Extreme 500GB SSD",
+    "price": 5499
+  },
+  {
+    "id": "45",
+    "name": "SanDisk Ultra 128GB Pen Drive",
+    "price": 1099
+  },
+  {
+    "id": "46",
+    "name": "Kingston 64GB Pen Drive",
+    "price": 599
+  },
+  {
+    "id": "47",
+    "name": "SanDisk 256GB microSD Card",
+    "price": 1999
+  },
+  {
+    "id": "48",
+    "name": "TP-Link Archer C6 Router",
+    "price": 2499
+  },
+  {
+    "id": "49",
+    "name": "D-Link DIR-615 Router",
+    "price": 1199
+  },
+  {
+    "id": "50",
+    "name": "Netgear Nighthawk AX1800",
+    "price": 8999
+  },
+  {
+    "id": "51",
+    "name": "Anker 20000mAh Power Bank",
+    "price": 3499
+  },
+  {
+    "id": "52",
+    "name": "Mi 10000mAh Power Bank 3i",
+    "price": 1299
+  },
+  {
+    "id": "53",
+    "name": "Ambrane 20000mAh Power Bank",
+    "price": 1799
+  },
+  {
+    "id": "54",
+    "name": "Apple 20W USB-C Charger",
+    "price": 1900
+  },
+  {
+    "id": "55",
+    "name": "Samsung 25W Fast Charger",
+    "price": 1499
+  },
+  {
+    "id": "56",
+    "name": "Anker 65W GaN Charger",
+    "price": 3999
+  },
+  {
+    "id": "57",
+    "name": "Portronics Konnect USB-C Cable",
+    "price": 299
+  },
+  {
+    "id": "58",
+    "name": "boAt Type-C Cable 1.5m",
+    "price": 249
+  },
+  {
+    "id": "59",
+    "name": "Logitech C920 Webcam",
+    "price": 6495
+  },
+  {
+    "id": "60",
+    "name": "Ant Esports 1080p Webcam",
+    "price": 1299
+  },
+  {
+    "id": "61",
+    "name": "Sony PlayStation 5 Console",
+    "price": 49990
+  },
+  {
+    "id": "62",
+    "name": "Xbox Series S",
+    "price": 34990
+  },
+  {
+    "id": "63",
+    "name": "Nintendo Switch OLED",
+    "price": 32999
+  },
+  {
+    "id": "64",
+    "name": "Sony DualSense Controller",
+    "price": 5990
+  },
+  {
+    "id": "65",
+    "name": "Logitech G102 Gaming Mouse",
+    "price": 1295
+  },
+  {
+    "id": "66",
+    "name": "HyperX Cloud Stinger Headset",
+    "price": 3999
+  },
+  {
+    "id": "67",
+    "name": "Amazon Echo Dot 5th Gen",
+    "price": 4499
+  },
+  {
+    "id": "68",
+    "name": "Amazon Fire TV Stick 4K",
+    "price": 5999
+  },
+  {
+    "id": "69",
+    "name": "Google Chromecast with Google TV",
+    "price": 6399
+  },
+  {
+    "id": "70",
+    "name": "Mi Smart Band 8",
+    "price": 2999
+  },
+  {
+    "id": "71",
+    "name": "Canon EOS 1500D DSLR",
+    "price": 36995
+  },
+  {
+    "id": "72",
+    "name": "Nikon D3500 DSLR",
+    "price": 39995
+  },
+  {
+    "id": "73",
+    "name": "Sony ZV-1 Camera",
+    "price": 63990
+  },
+  {
+    "id": "74",
+    "name": "GoPro HERO12 Black",
+    "price": 39990
+  },
+  {
+    "id": "75",
+    "name": "Canon PIXMA G2010 Printer",
+    "price": 11999
+  },
+  {
+    "id": "76",
+    "name": "HP DeskJet 2331 Printer",
+    "price": 4999
+  },
+  {
+    "id": "77",
+    "name": "Epson EcoTank L3250",
+    "price": 14999
+  },
+  {
+    "id": "78",
+    "name": "Brother DCP-T426W Printer",
+    "price": 13999
+  },
+  {
+    "id": "79",
+    "name": "Samsung 43 inch Crystal 4K TV",
+    "price": 29990
+  },
+  {
+    "id": "80",
+    "name": "LG 55 inch 4K OLED TV",
+    "price": 89990
+  },
+  {
+    "id": "81",
+    "name": "Mi 5A 43 inch Smart TV",
+    "price": 21999
+  },
+  {
+    "id": "82",
+    "name": "Sony Bravia 50 inch 4K TV",
+    "price": 59990
+  },
+  {
+    "id": "83",
+    "name": "boAt Stone 352 Bluetooth Speaker",
+    "price": 1499
+  },
+  {
+    "id": "84",
+    "name": "JBL Flip 6 Speaker",
+    "price": 9999
+  },
+  {
+    "id": "85",
+    "name": "Sony SRS-XB13 Speaker",
+    "price": 3490
+  },
+  {
+    "id": "86",
+    "name": "Marshall Emberton II",
+    "price": 14999
+  },
+  {
+    "id": "87",
+    "name": "Zebronics Zeb-Juke Soundbar",
+    "price": 2999
+  },
+  {
+    "id": "88",
+    "name": "Philips TAB5305 Soundbar",
+    "price": 5999
+  },
+  {
+    "id": "89",
+    "name": "Crucial 16GB DDR4 RAM",
+    "price": 3499
+  },
+  {
+    "id": "90",
+    "name": "Corsair Vengeance 16GB DDR5 RAM",
+    "price": 5999
+  },
+  {
+    "id": "91",
+    "name": "Intel Core i5-12400F Processor",
+    "price": 11999
+  },
+  {
+    "id": "92",
+    "name": "AMD Ryzen 5 5600X",
+    "price": 13499
+  },
+  {
+    "id": "93",
+    "name": "NVIDIA GeForce RTX 4060 GPU",
+    "price": 31999
+  },
+  {
+    "id": "94",
+    "name": "Gigabyte B550M Motherboard",
+    "price": 9499
+  },
+  {
+    "id": "95",
+    "name": "Cooler Master MWE 550W PSU",
+    "price": 3999
+  },
+  {
+    "id": "96",
+    "name": "Lenovo Legion 5 Gaming Laptop",
+    "price": 84990
+  },
+  {
+    "id": "97",
+    "name": "ASUS TUF Gaming F15",
+    "price": 69990
+  },
+  {
+    "id": "98",
+    "name": "HP Victus 15",
+    "price": 62990
+  },
+  {
+    "id": "99",
+    "name": "Wacom One Drawing Tablet",
+    "price": 7999
+  },
+  {
+    "id": "100",
+    "name": "Amazon Basics Laptop Bag",
+    "price": 1299
+  }
+]
