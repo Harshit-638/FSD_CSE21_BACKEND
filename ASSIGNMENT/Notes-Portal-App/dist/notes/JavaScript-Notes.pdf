@@ -1,0 +1,61 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 625 >>
+stream
+BT
+1 0 0 1 54 750 Tm
+/F1 18 Tf
+(JavaScript Notes) Tj
+0 -28 Td
+/F1 12 Tf
+(Introduction - A programming language for the web.) Tj
+0 -28 Td
+/F1 12 Tf
+(Variables - Store values with const and let.) Tj
+0 -28 Td
+/F1 12 Tf
+(Data types - Include strings, numbers, and booleans.) Tj
+0 -28 Td
+/F1 12 Tf
+(Functions - Reusable blocks of code.) Tj
+0 -28 Td
+/F1 12 Tf
+(Arrays - Ordered collections of values.) Tj
+0 -28 Td
+/F1 12 Tf
+(Objects - Collections of named properties.) Tj
+0 -28 Td
+/F1 12 Tf
+(DOM - The browser document structure.) Tj
+0 -28 Td
+/F1 12 Tf
+(ES6 - Modern features including modules and arrow functions.) Tj
+0 -28 Td
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+986
+%%EOF

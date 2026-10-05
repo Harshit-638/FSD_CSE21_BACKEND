@@ -1,0 +1,58 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 577 >>
+stream
+BT
+1 0 0 1 54 750 Tm
+/F1 18 Tf
+(React Notes) Tj
+0 -28 Td
+/F1 12 Tf
+(Introduction - A library for building user interfaces.) Tj
+0 -28 Td
+/F1 12 Tf
+(Components - Reusable pieces of a user interface.) Tj
+0 -28 Td
+/F1 12 Tf
+(JSX - Syntax for describing UI in JavaScript.) Tj
+0 -28 Td
+/F1 12 Tf
+(Props - Values passed from a parent component.) Tj
+0 -28 Td
+/F1 12 Tf
+(State - Data that changes and updates the UI.) Tj
+0 -28 Td
+/F1 12 Tf
+(Hooks - Functions such as useState for React features.) Tj
+0 -28 Td
+/F1 12 Tf
+(Events - Handle actions such as clicks and input.) Tj
+0 -28 Td
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+938
+%%EOF
